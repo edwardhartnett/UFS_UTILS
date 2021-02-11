@@ -13,12 +13,9 @@ elseif(CMAKE_Fortran_COMPILER_ID MATCHES "^(GNU)$")
   set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -ffree-line-length-0 -fdefault-real-8 -fconvert=big-endian")
 endif()
 
-include_directories(
-      ${PROJECT_SOURCE_DIR}
-)
+include_directories(${PROJECT_SOURCE_DIR})
 
-set(exe_name ftst_utils)
-add_executable(${exe_name} ${fortran_src})
+add_executable(ftst_utils ${fortran_src})
 add_test(NAME ftst_utils COMMAND ftst_utils)
 target_link_libraries(
   ftst_utils
